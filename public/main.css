@@ -1,0 +1,56 @@
+@font-face {
+    font-family: DroidSerif;
+    src: url(fonts/DroidSerif-Regular.ttf);
+  }
+  *{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .navbar-brand {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 2rem;
+  }
+  .table-trainees{
+    margin-top: 74px;
+    padding-top: 40px;
+  }
+  nav .nav-link {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding: 1.1em 1em!important;
+  }
+  header {
+    background-image: url('../imgs/back3.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+  }
+  .intro-table{
+    width: 100%;
+    height: 100vh;
+    padding-top: 150px;
+  }
+  
+  nav{
+    background-color: rgba(92, 92, 92, 0.11);
+  }
+  .btn-default{
+    background-color: #fff;
+    float: left;
+    margin: 10px;
+  }
+  .navbar-brand{
+    color: #fed136;
+    transition: 0.5s;
+  }
+  .navbar-brand:hover{
+    color: #fff;
+  }
+  .actions a:first-of-type{
+    margin-right: 13px;
+  }
