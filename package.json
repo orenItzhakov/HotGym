@@ -1,0 +1,26 @@
+{
+  "name": "hotgym",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orenItzhakov/HotGym.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/orenItzhakov/HotGym/issues"
+  },
+  "homepage": "https://github.com/orenItzhakov/HotGym#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.1.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.1"
+  }
+}
