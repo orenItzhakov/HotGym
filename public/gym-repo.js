@@ -33,13 +33,13 @@ class GymRepo {
                 this.trainees = data;
                 console.log(data)
                 this.trainees.splice(index, 1);
-                return this.posts;
+                return this.trainees;
             })
     };
 
 
     editTrainee(index, traineeForm) {
-        let traineetId = this.posts[postIndex]._id;
+        let traineetId = this.trainees[index]._id;
         return $.ajax({
             url: '/trainees/' + traineetId,
             method: "POST",
