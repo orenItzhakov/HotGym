@@ -30,7 +30,6 @@ class EventHandler {
                 dateMedicalAssuranceEnd: dateMedicalAssuranceEnd,
                 dateMembershipStart: dateMembershipStart,
             }
-
             this.gymRepo.addTrainee(traineeForm).then(() => {
                 alert("new trainee as been saved");
             })
