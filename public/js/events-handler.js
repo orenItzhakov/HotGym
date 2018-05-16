@@ -1,9 +1,11 @@
 class EventHandler {
 
-    constructor(traineesRenderer, gymRepo) {
+    constructor(gymRepo, traineesRenderer) {
         this.traineesRenderer = traineesRenderer
-        this.gymRypo = gymRepo;
+        this.gymRepo = gymRepo;
     }
+
+    
 
     handleAddTrainee() {
         $('.addTrainee').on('click', () => {
@@ -46,10 +48,16 @@ class EventHandler {
     }
 
     handleRemoveTrainee() {
-        let traineesId = $('.remove-trainee').siblings('.trainee').attr("data-id");
-        this.gymRepo.removeTrainee(traineesId).then(() => {
-            this.gymRepo.trainessRenderer.renderTrainees(this.gymRypo.trainees);
+     let insideRepo = this.gymRepo;
+     let insideTraineesRender =this.traineesRenderer;
+        $('.pages').on('click','.delete', function(){
+            console.log(this.gymRepo)
+        let traineeId = $(this).closest('.trainee').data().id;
+        console.log(traineeId)
+        insideRepo.removeTrainee(traineeId).then((updatedTraineesList) => {
+            insideTraineesRender.renderTrainees(updatedTraineesList);
         })
+    })
     }
 
     HandleEditTrainee() {

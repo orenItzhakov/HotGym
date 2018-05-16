@@ -6,11 +6,14 @@ let gymRepo = new GymRepo();
 let traineesRenderer = new TraineesRenderer();
 let eventHandler = new EventHandler(gymRepo, traineesRenderer);
 
-
+eventHandler.handleRemoveTrainee();
 var getTrainees = gymRepo.getTrainees();
 getTrainees.then(function(data) {
     traineesRenderer.renderTrainees(data)
 });
+
+
+
 
 // eventHandler.handleRenderTrainees();
 // eventHandler.handleAddTrainee();

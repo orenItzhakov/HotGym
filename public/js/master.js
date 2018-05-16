@@ -1,3 +1,6 @@
+$(".addNav").load("nav.html");
+
+var loadToggleImage = function(){
 $(function() {
     $('.arrow').click(function() {
         $(".pages").toggleClass("close-top-bar", 800);
@@ -10,5 +13,10 @@ $(function() {
         $(".userBox").toggleClass("showBox");
     });
 
-    $(".addNav").load("nav.html");
 });
+
+}
+
+loadToggleImage()
+
+
