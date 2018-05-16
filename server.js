@@ -33,6 +33,8 @@ app.get('/trainees', function(req, res) {
     });
 });
 //---------------------------------------------------------------------
+
+
 app.get('/home', function(req, res) {
     res.sendfile(__dirname + '/public/homepage.html');
 });

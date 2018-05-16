@@ -12,12 +12,37 @@
     <link rel="stylesheet" type="text/css" href="css/master.css">
     <link rel="stylesheet" type="text/css" href="css/homepage.css">
     <link rel="shortcut icon" href="imgs/icon.png" type="image/x-icon">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body>
   <div class="addNav"></div>
     <div class="pages">
         <div class="page">
+        <div class="chart">
+                <script id="chart-template" type="text/javascript">
+                    google.charts.load("current", {packages:["corechart"]});
+                    google.charts.setOnLoadCallback(drawChart);
+                    function drawChart() {
+                      var data = google.visualization.arrayToDataTable([
+                        ['Category', 'Hours per Day'],
+                        ['Target number - More members to sign up', 11],
+                        ['Left', 2],
+                        ['About to leave', 2],
+                        ['New members', 2]
+                      ]);
+              
+                      var options = {
+                        title: 'Current Month - Members Traffic',
+                        pieHole: 0.4,
+                      };
+              
+                      var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+                      chart.draw(data, options);
+                    }
+                  </script>
+                  </div>
+                <div id="donutchart" style="width: 550px; height: 320px;"></div>
 
         </div>
     </div>
