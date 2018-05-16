@@ -1,0 +1,32 @@
+table,  th, td {
+  border: 1px solid #878787;
+  border-collapse: collapse;
+}
+table {
+  width: 94%;
+  margin: 50px auto 0px;
+}
+ thead {
+  background-color: #ADD2E4;
+  color: #15366d;
+  text-align: left;
+}
+tr {
+  height: 65px;
+}
+ th, td {
+  padding: 0px 13px;
+  line-height: 65px;
+  position: relative;
+  transition: 0.5s;
+  font-size: 15px;
+}
+.actions a{
+  color: #219BD2;
+  font-weight: bold;
+  transition: 0.5s;
+}
+.actions a:hover{
+  text-decoration: underline;
+  color: #1d7ba6;
+}

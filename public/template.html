@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/master.css">
-    <link rel="stylesheet" type="text/css" href="css/trainee.css">
+    <link rel="stylesheet" type="text/css" href="css/homepage.css">
     <link rel="shortcut icon" href="imgs/icon.png" type="image/x-icon">
 
 </head>
@@ -55,7 +55,7 @@
                         <i class="material-icons ico">home</i><span class="text-ico" style="">Home</span>
                     </li>
                 </a>
-                <a href="#">
+                <a href="trainees.html">
                     <li class="">
                         <i class="material-icons ico">directions_car</i><span class="text-ico" style="">Trainees</span>
                     </li>
@@ -84,43 +84,9 @@
     <div class="pages">
         <div class="page">
 
-
-
-            <button type="button" name="button">Add trainee</button>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Full name</th>
-                        <th>Adress</th>
-                        <th>Date start membership</th>
-                        <th>Date end membership</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody class="trainees">
-
-
-
-                </tbody>
-            </table>
-
-            <!-- info -->
-            <!-- add user -->
-            <form action="trainees" method="POST">
-                <input type="submit" value="addUserBtn">
-
-            </form>
-
-
-
-
-
-
-
         </div>
     </div>
-    <script src="jquery/dist/jquery.js"></script>
+
     <script type="text/javascript">
         $(function() {
             $('.arrow').click(function() {
@@ -135,30 +101,7 @@
             });
         });
     </script>
-
-
-    <!-- //----------------------------- -->
-
-    <script id="trainees-template" type="text/x-handlebars-template">
-        <tr class="trainee" data-id="{{_id}}">
-            <td>1</td>
-            <td>{{fullName}}</td>
-            <td>{{adress}}</td>
-            <td>{{dateMembershipStart}}</td>
-            <td>{{dateMembershipEnd}}</td>
-            <td class="actions">
-                <a href="#">Delete</a>
-                <a href="#">Edit</a>
-            </td>
-        </tr>
-
-
-    </script>
-
-
-
-    <script src="handlebars/dist/handlebars.js"></script>
-    <script src="js/trainee-main.js"  type="module"></script>
+    <script src="jquery/dist/jquery.js"></script>
 </body>
 
 </html>

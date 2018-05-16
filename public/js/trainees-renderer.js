@@ -9,9 +9,8 @@
         }
 
         renderTrainees(trainees) {
-            debugger
             this.$trainees.empty();
-            let template = Handlebars.compile(this.$trainees);
+            let template = Handlebars.compile(this.$traineesTemplate);
             for (let i = 0; i < trainees.length; i++) {
                 let newHTML = template(trainees[i]);
                 this.$trainees.append(newHTML);
@@ -32,4 +31,4 @@
     //     }
     // }
 
-    export default renderTraineesPage
+    export default TraineesRenderer;

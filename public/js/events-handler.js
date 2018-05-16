@@ -19,12 +19,12 @@ class EventHandler {
             this.gymRepo.getTrainees(() => {
                 this.traineesRenderer.renderTrainees(this.gymRepo.trainees)
             })
-            
+
         })
     }
 
     handleRemoveTrainee() {
-        let traineesId = $('.remove-trainee').siblings('.trainee').data().id;
+        let traineesId = $('.remove-trainee').siblings('.trainee').attr("data-id");
         this.gymRepo.removeTrainee(traineesId).then(() => {
             this.gymRepo.trainessRenderer.renderTrainees(this.gymRypo.trainees);
         })
