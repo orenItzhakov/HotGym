@@ -25,6 +25,7 @@
 input[type="submit"]{
   background: #3b3b3b;
   font-size: 15px;
+  cursor: pointer;
   color: #fff;
   padding: 0px 12px;
   font-weight: bold;
