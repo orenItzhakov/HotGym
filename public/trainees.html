@@ -19,10 +19,19 @@
     <div class="addNav"></div>
     <div class="pages">
         <div class="page">
-
-
-
-            <button type="button" name="button">Add trainee</button>
+          <div class="search_form">
+            <div class="search">
+              <input type="text" id="myInput" placeholder="Search trainee" onkeyup="searchWords()">
+              <div class="styled-select rounded">
+                <select name="selector" onchange="searchWords()" title="Search by gender">
+                  <option value="">Gender</option>
+                  <option value="">Male</option>
+                  <option value="">Female</option>
+                </select>
+              </div>
+              <button type="button" name="button" onclick="window.location.href = 'addTrainee.html'" class="moveToAdd">Add new trainee</button>
+            </div>
+          </div>
             <table class="table">
                 <thead>
                     <tr>
@@ -40,20 +49,11 @@
 
                 </tbody>
             </table>
-
             <!-- info -->
             <!-- add user -->
-            <form action="trainees" method="POST">
+            <form action="trainees" method="POST" style="display:none;">
                 <input type="submit" value="addUserBtn">
-
             </form>
-
-
-
-
-
-
-
         </div>
     </div>
     <script src="jquery/dist/jquery.js"></script>

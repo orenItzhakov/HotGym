@@ -1,0 +1,189 @@
+<html lang="en">
+
+<head>
+    <title>HotGym</title>
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-language" content="he">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/master.css">
+    <link rel="stylesheet" type="text/css" href="css/addTrainee.css">
+    <link rel="shortcut icon" href="imgs/icon.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-right">
+            <div class="item" title="Your account">
+                <i class="material-icons upUser">person</i>
+            </div>
+            <div class="userBox">
+                <div class="information">
+                    <div class="logoCompany">
+                        <img src="imgs/hp_logo.gif" alt="">
+                    </div>
+                    <div class="names">
+                        <div class="centerText">
+                            <span>Holmesplace</span>
+                            <span>Avi Bozaglo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="options">
+                    <button type="button" onclick="window.location.href = '#'">
+                        <i class="material-icons">exit_to_app</i>
+                        <span>Log out</span>
+                    </button>
+                    <button type="button">
+                        <i class="material-icons">notifications</i>
+                        <span>Settings</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="header-logo">
+            <a href="homepage.html">
+                <h2>HotGym</h2>
+            </a>
+        </div>
+    </div>
+    <div class="top-bar">
+        <div class="menu">
+            <ul>
+                <a href="#">
+                    <li class="">
+                        <i class="material-icons ico">home</i>
+                        <span class="text-ico" style="">Home</span>
+                    </li>
+                </a>
+                <a href="trainees.html">
+                    <li class="">
+                        <i class="material-icons ico">directions_car</i>
+                        <span class="text-ico" style="">Trainees</span>
+                    </li>
+                </a>
+                <a href="#">
+                    <li class="">
+                        <i class="material-icons ico">book</i>
+                        <span class="text-ico" style="">Employees</span>
+                    </li>
+                </a>
+                <a href="#">
+                    <li class="">
+                        <i class="material-icons ico">bookmark</i>
+                        <span class="text-ico" style="">Shopping</span>
+                    </li>
+                </a>
+                <a href="#">
+                    <li class="">
+                        <i class="material-icons ico">lightbulb_outline</i>
+                        <span class="text-ico" style="">About us</span>
+                    </li>
+                </a>
+            </ul>
+        </div>
+        <div class="arrow" style="">
+            <i class="material-icons rotate">arrow_forward</i>
+        </div>
+    </div>
+    <div class="pages">
+        <div class="page">
+            <form class="trainee-form">
+                <table class="table">
+
+                    <thead>
+                            <th>Adding Trainee From:</th>
+                            <br>
+                        <tr>
+                            <td>
+                                <span>Full name </span>
+                                <input spaceholder="please enter fullname" type="text" class="fullName">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>gender </span>
+                                <input spaceholder="please  enter" type="text" class="gender">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>age </span>
+                                <input require spaceholder="please enter fullname" type="number" class="age">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Phone Number </span>
+                                <input spaceholder="please enter fullname" type="text" class="phoneNumber">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Adress </span>
+                                <input spaceholder="please enter fullname" type="text" class="adress">
+                            </td>
+
+                        </tr>
+                        <tr>
+
+                            <td>
+                                    <span>End Of Medical Assurance </span>
+                                    <input spaceholder="please enter fullname" type="date" class="dateMedicalAssuranceEnd">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                    <span>Start Of Medical Assurance </span>
+                                    <input spaceholder="please enter fullname" type="date" class="dateMembershipStart">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Start Of Memebership </span>
+                                <input spaceholder="please enter fullname" type="date" class="dateMembershipStart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>End Of Memebership </span>
+                                <input spaceholder="please enter fullname" type="date" class="dateMembershipEnd">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                              <input type="submit" name="submit" value="save">
+                            </td>
+                        </tr>
+                    </thead>
+                </table>
+            </form>
+
+            <script type="text/javascript">
+                $(function () {
+                    $('.arrow').click(function () {
+                        $(".pages").toggleClass("close-top-bar", 800);
+                        $(".top-bar span").toggle("fast");
+                        $(".arrow").toggleClass("arrow-right", 800);
+                        $(".arrow i").toggleClass("rotate", 800);
+                    });
+
+                    $('.upUser').click(function () {
+                        $(".userBox").toggleClass("showBox");
+                    });
+                });
+            </script>
+            <script src="jquery/dist/jquery.js"></script>
+</body>
+
+</html>
