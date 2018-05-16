@@ -34,7 +34,23 @@ app.get('/trainees', function(req, res) {
 });
 //---------------------------------------------------------------------
 app.get('/home', function(req, res) {
-    res.sendfile(__dirname + '/public/homepage.html');
+    res.sendFile(__dirname + '/public/homepage.html');
+});
+
+app.get('/addTrainee', function(req, res) {
+    res.sendFile(__dirname + '/public/adding user/addTrainee.html');
+});
+
+app.post('/trainees', (req, res) => {
+    var newTrainee = new Trainee(req.body);
+    newTrainee.save((err, post) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('POST ADDED')
+            res.send(post);
+        }
+    })
 });
 
 //---------------------------------------------------------------------
