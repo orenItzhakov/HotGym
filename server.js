@@ -37,6 +37,18 @@ app.get('/home', function(req, res) {
     res.sendfile(__dirname + '/public/homepage.html');
 });
 
+app.post('/trainees', (req, res) => {
+    var newTrainee = new Trainee(req.body);
+    newTrainee.save((err, post) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('POST ADDED')
+            res.send(post);
+        }
+    })
+});
+
 //---------------------------------------------------------------------
 
 // 2) to handle adding a trainee

@@ -7,8 +7,31 @@ class EventHandler {
 
     handleAddTrainee() {
         $('.addTrainee').on('click', () => {
-            let $traineeForm = $(this).closest('.trainee-from') // need to know the way you orginized the html.
-            this.gymRepo.addTrainee($traineeForm).then(() => {
+            // let $traineeForm = $(this).closest('.trainee-from') // need to know the way you orginized the html.
+
+            // cetch trainee data 
+
+            //----
+            let fullName = $('.fullName').val();
+            let gender = $('.gender').val();
+            let age = $('.age').val();
+            let phoneNumber = $('.phoneNumber').val();
+            let adress = $('.adress').val();
+            let dateMedicalAssuranceEnd = $('.dateMedicalAssuranceEnd').val();
+            let dateMembershipStart = $('.dateMembershipStart').val();
+            let dateMembershipEnd = $('.dateMembershipEnd').val();
+            //-----
+            let traineeForm = {
+                fullName: fullName,
+                gender: gender,
+                age: age,
+                phoneNumber: phoneNumber,
+                adress: adress,
+                dateMedicalAssuranceEnd: dateMedicalAssuranceEnd,
+                dateMembershipStart: dateMembershipStart,
+            }
+
+            this.gymRepo.addTrainee(traineeForm).then(() => {
                 alert("new trainee as been saved");
             })
         })
