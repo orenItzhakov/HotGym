@@ -23,8 +23,8 @@ class GymRepo {
             })
     }
 
-    removeTrainee(index) {
-        let traineetId = this.trainees[index]._id;
+    removeTrainee(traineetId) {
+       // let traineetId = this.trainees[index]._id;
         return $.ajax({
             method: "DELETE",
             url: '/trainees/' + traineetId
@@ -38,10 +38,10 @@ class GymRepo {
     };
 
 
-    editTrainee(index, traineeForm) {
-        let traineetId = this.trainees[index]._id;
+    editTrainee(traineeId, traineeForm) {
+       // let traineetId = this.trainees[index]._id;
         return $.ajax({
-            url: '/trainees/' + traineetId,
+            url: '/trainees/' + traineeId,
             method: "POST",
             data: traineeForm,
             dataType: 'json'

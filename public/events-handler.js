@@ -2,13 +2,13 @@ class EventHandler {
 
     constructor(traineesRenderer, gymRepo) {
         this.traineesRenderer = traineesRenderer
-        this.gymRypo - gymRepo;
+        this.gymRypo = gymRepo;
     }
 
     handleAddTrainee() {
         $('.addTrainee').on('click', () => {
             let $traineeForm = $(this).closest('.trainee-from') // need to know the way you orginized the html.
-            this.gymRepo.addTrainee(traineeForm).then(() => {
+            this.gymRepo.addTrainee($traineeForm).then(() => {
                 alert("new trainee as been saved");
             })
         })
@@ -25,15 +25,15 @@ class EventHandler {
 
     handleRemoveTrainee() {
         let traineesId = $('.remove-trainee').siblings('.trainee').data().id;
-        this.gymRepo.RemoveTrainee(trainessId).then(() => {
-            this.gymRepo.trainessRenderer.renderTrainees(this.gymRypo)
+        this.gymRepo.removeTrainee(traineesId).then(() => {
+            this.gymRepo.trainessRenderer.renderTrainees(this.gymRypo.trainees);
         })
     }
 
     HandleEditTrainee() {
         let $traineeForm = $(this).closest('.trainee-form') // need to know the way you orginized the html.
-        let index = $traineeForm.data().id
-        this.gymRepo.editTrainee(index, traineeForm);
+        let traineesId = $traineeForm.data().id
+        this.gymRepo.editTrainee(traineesId, traineeForm);
 
     }
 }
