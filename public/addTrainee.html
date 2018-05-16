@@ -19,81 +19,46 @@
     <div class="addNav"></div>
     <div class="pages">
         <div class="page">
-            <form class="trainee-form">
-                <table class="table">
-                    <thead>
-                        <th>Adding Trainee From:</th>
-                        <br>
-                        <tr>
-                            <td>
-                                <span>Full name </span>
-                                <input spaceholder="please enter fullname" type="text" class="fullName">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>
-                                <span>gender </span>
-                                <input spaceholder="please  enter" type="text" class="gender">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>
-                                <span>age </span>
-                                <input require spaceholder="please enter fullname" type="number" class="age">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>
-                                <span>Phone Number </span>
-                                <input spaceholder="please enter fullname" type="text" class="phoneNumber">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>
-                                <span>Adress </span>
-                                <input spaceholder="please enter fullname" type="text" class="adress">
-                            </td>
-
-                        </tr>
-                        <tr>
-
-                            <td>
-                                <span>End Of Medical Assurance </span>
-                                <input spaceholder="please enter fullname" type="date" class="dateMedicalAssuranceEnd">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span>Start Of Medical Assurance </span>
-                                <input spaceholder="please enter fullname" type="date" class="dateMembershipStart">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span>Start Of Memebership </span>
-                                <input spaceholder="please enter fullname" type="date" class="dateMembershipStart">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span>End Of Memebership </span>
-                                <input spaceholder="please enter fullname" type="date" class="dateMembershipEnd">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="submit" name="submit" value="save">
-                            </td>
-                        </tr>
-                    </thead>
-                </table>
+          <h2 class="headline">Adding Trainee</h2>
+          <div class="add_trainee">
+            <form>
+              <div class="inp">
+                <p>Full name</p>
+                <input spaceholder="please enter fullname" type="text" class="fullName">
+              </div>
+              <div class="inp">
+                <p>Gender</p>
+                <input spaceholder="please  enter" type="text" class="gender">
+              </div>
+              <div class="inp">
+                <p>Age</p>
+                <input require spaceholder="please enter fullname" type="number" class="age">
+              </div>
+              <div class="inp">
+                <p>Phone number</p>
+                <input spaceholder="please enter fullname" type="text" class="phoneNumber">
+              </div>
+              <div class="inp">
+                <p>Adress</p>
+                <input spaceholder="please enter fullname" type="text" class="adress">
+              </div>
+              <div class="inp">
+                <p>Medical assurance Date</p>
+                <input spaceholder="please enter fullname" type="date" class="dateMedicalAssuranceEnd">
+              </div>
+              <div class="inp">
+                <p>Date start memebership</p>
+                <input spaceholder="please enter fullname" type="date" class="dateMembershipStart">
+              </div>
+              <div class="inp">
+                <p>Date end memebership</p>
+                <input spaceholder="please enter fullname" type="date" class="dateMembershipEnd">
+              </div>
+              <div class="inp">
+                <input type="submit" name="submit" value="save">
+              </div>
             </form>
-
-
+          </div>
             <script src="jquery/dist/jquery.js"></script>
             <script src="js/master.js"></script>
 </body>

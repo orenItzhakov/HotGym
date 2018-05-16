@@ -22,6 +22,11 @@ a {
   text-decoration: none;
   color: inherit;
 }
+h2.headline{
+  text-align: center;
+  margin: 10px 0px 25px;
+  font-size: 22px;
+}
 .header {
   position: fixed;
   height: 73px;

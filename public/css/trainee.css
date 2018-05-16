@@ -98,11 +98,14 @@ tr {
 }
 .moveToAdd {
   float: right;
-  background: #add2e4;
-  font-size: 17px;
+  background: #3b3b3b;
+  font-size: 15px;
   height: 45px;
-  padding: 0px 12px;
+  color: #fff;
   cursor: pointer;
+  padding: 0px 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
   border-radius: 5px;
   border: 1px solid #878787;
 }
