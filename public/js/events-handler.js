@@ -6,30 +6,44 @@ class EventHandler {
     }
 
     handleAddTrainee() {
-        $('.addTrainee').on('click', () => {
+        $('.saveTrainee').on('click', () => {
+            debugger;
             // let $traineeForm = $(this).closest('.trainee-from') // need to know the way you orginized the html.
+            // const recoverValues = () => {
+            const values = {};
 
+            $(':input').each(function() {
+                if ($(this).hasClass('addTrainee'))
+                    return;
+                // very ugly code
+                values[$(this).attr('class')] = $(this).val();
+            });
+            // debugger;
+            console.log(values)
+            return values;
+
+            // }
             // cetch trainee data 
 
-            //----
-            let fullName = $('.fullName').val();
-            let gender = $('.gender').val();
-            let age = $('.age').val();
-            let phoneNumber = $('.phoneNumber').val();
-            let adress = $('.adress').val();
-            let dateMedicalAssuranceEnd = $('.dateMedicalAssuranceEnd').val();
-            let dateMembershipStart = $('.dateMembershipStart').val();
-            let dateMembershipEnd = $('.dateMembershipEnd').val();
-            //-----
-            let traineeForm = {
-                fullName: fullName,
-                gender: gender,
-                age: age,
-                phoneNumber: phoneNumber,
-                adress: adress,
-                dateMedicalAssuranceEnd: dateMedicalAssuranceEnd,
-                dateMembershipStart: dateMembershipStart,
-            }
+            // //----
+            // let fullName = $('.fullName').val();
+            // let gender = $('.gender').val();
+            // let age = $('.age').val();
+            // let phoneNumber = $('.phoneNumber').val();
+            // let adress = $('.adress').val();
+            // let dateMedicalAssuranceEnd = $('.dateMedicalAssuranceEnd').val();
+            // let dateMembershipStart = $('.dateMembershipStart').val();
+            // let dateMembershipEnd = $('.dateMembershipEnd').val();
+            // //-----
+            // let traineeForm = {
+            //     fullName: fullName,
+            //     gender: gender,
+            //     age: age,
+            //     phoneNumber: phoneNumber,
+            //     adress: adress,
+            //     dateMedicalAssuranceEnd: dateMedicalAssuranceEnd,
+            //     dateMembershipStart: dateMembershipStart,
+            // }
             this.gymRepo.addTrainee(traineeForm).then(() => {
                 alert("new trainee as been saved");
             })
