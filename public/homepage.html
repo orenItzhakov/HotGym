@@ -15,92 +15,15 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="header-right">
-            <div class="item" title="Your account">
-                <i class="material-icons upUser">person</i>
-            </div>
-            <div class="userBox">
-                <div class="information">
-                    <div class="logoCompany">
-                        <img src="imgs/hp_logo.gif" alt="">
-                    </div>
-                    <div class="names">
-                        <div class="centerText">
-                            <span>Holmesplace</span>
-                            <span>Avi Bozaglo</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="options">
-                    <button type="button" onclick="window.location.href = '#'"><i class="material-icons">exit_to_app</i>
-            <span>Log out</span></button>
-                    <button type="button"><i class="material-icons">notifications</i>
-            <span>Settings</span></button>
-                </div>
-            </div>
-        </div>
-        <div class="header-logo">
-            <a href="homepage.html">
-                <h2>HotGym</h2>
-            </a>
-        </div>
-    </div>
-    <div class="top-bar">
-        <div class="menu">
-            <ul>
-                <a href="#">
-                    <li class="">
-                        <i class="material-icons ico">home</i><span class="text-ico" style="">Home</span>
-                    </li>
-                </a>
-                <a href="trainees.html">
-                    <li class="">
-                        <i class="material-icons ico">directions_car</i><span class="text-ico" style="">Trainees</span>
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="">
-                        <i class="material-icons ico">book</i><span class="text-ico" style="">Employees</span>
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="">
-                        <i class="material-icons ico">bookmark</i><span class="text-ico" style="">Shopping</span>
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="">
-                        <i class="material-icons ico">lightbulb_outline</i><span class="text-ico" style="">About us</span>
-                    </li>
-                </a>
-            </ul>
-        </div>
-        <div class="arrow" style="">
-            <i class="material-icons rotate">arrow_forward</i>
-        </div>
-    </div>
+  <div class="addNav"></div>
     <div class="pages">
         <div class="page">
 
         </div>
     </div>
 
-    <script type="text/javascript">
-        $(function() {
-            $('.arrow').click(function() {
-                $(".pages").toggleClass("close-top-bar", 800);
-                $(".top-bar span").toggle("fast");
-                $(".arrow").toggleClass("arrow-right", 800);
-                $(".arrow i").toggleClass("rotate", 800);
-            });
-
-            $('.upUser').click(function() {
-                $(".userBox").toggleClass("showBox");
-            });
-        });
-    </script>
     <script src="jquery/dist/jquery.js"></script>
+    <script src="js/master.js"></script>
 </body>
 
 </html>
