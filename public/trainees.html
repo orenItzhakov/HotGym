@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/master.css">
     <link rel="stylesheet" type="text/css" href="css/homepage.css">
     <link rel="shortcut icon" href="imgs/icon.png" type="image/x-icon">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -55,7 +55,7 @@
                         <i class="material-icons ico">home</i><span class="text-ico" style="">Home</span>
                     </li>
                 </a>
-                <a href="trainees.html">
+                <a href="#">
                     <li class="">
                         <i class="material-icons ico">directions_car</i><span class="text-ico" style="">Trainees</span>
                     </li>
@@ -84,9 +84,43 @@
     <div class="pages">
         <div class="page">
 
+
+
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Full name</th>
+                        <th>Adress</th>
+                        <th>Date start membership</th>
+                        <th>Date end membership</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="trainees">
+
+
+
+                </tbody>
+            </table>
+
+            <!-- info -->
+            <!-- add user -->
+            <form action="trainees" method="GET">
+                <input type="submit" value="addUserBtn">
+
+            </form>
+
+
+
+
+
+
+
         </div>
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript">
         $(function() {
             $('.arrow').click(function() {
@@ -101,6 +135,29 @@
             });
         });
     </script>
+
+
+    <!-- //----------------------------- -->
+
+    <script id="trainees-template" type="text/x-handlebars-template">
+        <tr class="trainee" data-id="">
+            <td>1</td>
+            <td>{{fullName}}</td>
+            <td>{{adress}}</td>
+            <td>{{dateMembershipStart}}</td>
+            <td>{{dateMembershipEnd}}</td>
+            <td class="actions">
+                <a href="#">Delete</a>
+                <a href="#">Watch</a>
+            </td>
+        </tr>
+
+
+    </script>
+
+
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>

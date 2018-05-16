@@ -1,6 +1,6 @@
 import GymRepo from './gym-repo.js';
 import TraineesRenderer from './trainees-renderer.js';
-import EventHandler from './events-handler.js'; 
+import EventHandler from './events-handler.js';
 
 let gymRepo = new GymRepo();
 let traineesRenderer = new TraineesRenderer();
@@ -12,5 +12,6 @@ eventsHandler.HandlerRemoveTrainee();
 eventsHandler.HandlerEditTrainee();
 
 var getTrainees = gymRepo.getTrainees();
-getTrainee.then(function(data){
-traineesRenderer.renderTrainees(data)});
+getTrainee.then(function(data) {
+    traineesRenderer.renderTrainees(data)
+});

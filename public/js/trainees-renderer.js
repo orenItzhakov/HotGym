@@ -7,18 +7,19 @@
             this.$traineesTemplate = $('#trainees-template').html();
             // this.$traineeDetailsTemplate = $('#traineeDetails-template').html();
         }
-    
+
         renderTrainees(trainees) {
+            debugger
             this.$trainees.empty();
             let template = Handlebars.compile(this.$trainees);
             for (let i = 0; i < trainees.length; i++) {
-              let newHTML = template(trainees[i]);
-              this.$trainees.append(newHTML);
-            //   this.traineeDetails(trainees, i);
+                let newHTML = template(trainees[i]);
+                this.$trainees.append(newHTML);
+                //   this.traineeDetails(trainees, i);
             }
         }
     }
-    
+
     //     rendertraineeDetails(trainees, traineeIndex) {
     //         let trainee = $(".trainee")[traineeIndex];
     //         let $detailsList = $(trainee).find('.details-list');
@@ -30,5 +31,5 @@
     //         }
     //     }
     // }
-    
+
     export default renderTraineesPage
