@@ -6,34 +6,38 @@ class EventHandler {
     }
 
     handleAddTrainee() {
-        $('.addTrainee').on('click', () => {
-            // let $traineeForm = $(this).closest('.trainee-from') // need to know the way you orginized the html.
+        // console.log(this);
+        let addBtn = $('.addTrainee');
+        // console.log(addBtn)
+        debugger
+        // $('.addTrainee').on('click', () => {
+        // let $traineeForm = $(this).closest('.trainee-from') // need to know the way you orginized the html.
 
-            // cetch trainee data 
+        // cetch trainee data 
 
-            //----
-            let fullName = $('.fullName').val();
-            let gender = $('.gender').val();
-            let age = $('.age').val();
-            let phoneNumber = $('.phoneNumber').val();
-            let adress = $('.adress').val();
-            let dateMedicalAssuranceEnd = $('.dateMedicalAssuranceEnd').val();
-            let dateMembershipStart = $('.dateMembershipStart').val();
-            let dateMembershipEnd = $('.dateMembershipEnd').val();
-            //-----
-            let traineeForm = {
-                fullName: fullName,
-                gender: gender,
-                age: age,
-                phoneNumber: phoneNumber,
-                adress: adress,
-                dateMedicalAssuranceEnd: dateMedicalAssuranceEnd,
-                dateMembershipStart: dateMembershipStart,
-            }
-            this.gymRepo.addTrainee(traineeForm).then(() => {
+        //----
+        let fullName = $('.fullName').val();
+        let gender = $(this).closest('.gender').val();
+        let age = $(this).closest('.age').val();
+        let phoneNumber = $(this).closest('.phoneNumber').val();
+        let adress = $(this).closest('.adress').val();
+        let dateMedicalAssuranceEnd = $(this).closest('.dateMedicalAssuranceEnd').val();
+        let dateMembershipStart = $(this).closest('.dateMembershipStart').val();
+        let dateMembershipEnd = $(this).closest('.dateMembershipEnd').val();
+        //-----
+        let traineeForm = {
+            fullName: fullName,
+            gender: gender,
+            age: age,
+            phoneNumber: phoneNumber,
+            adress: adress,
+            dateMedicalAssuranceEnd: dateMedicalAssuranceEnd,
+            dateMembershipStart: dateMembershipStart,
+        }
+        this.gymRepo.addTrainee(traineeForm).then(() => {
                 alert("new trainee as been saved");
             })
-        })
+            // })
     }
 
     handleRenderTrainees() {

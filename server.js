@@ -43,7 +43,7 @@ app.post('/trainees', (req, res) => {
         if (err) {
             console.log(err);
         } else {
-            console.log('POST ADDED')
+            console.log('Trainee  ADDED')
             res.send(post);
         }
     })
@@ -52,22 +52,22 @@ app.post('/trainees', (req, res) => {
 //---------------------------------------------------------------------
 
 // 2) to handle adding a trainee
-app.post('/trainees', function(req, res) {
-    var newTrainee = new Trainee({
-        fullName: "Ana Levi",
-        gender: "Female",
-        age: 52,
-        phoneNumber: "0501230067",
-        adress: "Alons 32 , Yavne",
-        dateMedicalAssuranceEnd: new Date(2017, 06, 06, 14, 12),
-        dateMembershipStart: new Date(2017, 11, 03, 14, 12),
-        dateMembershipEnd: new Date(2018, 11, 03, 14, 12),
-        isActive: true
-    });
-    newTrainee.save(function(requ, resp) {
-        res.send({ status: "Ok", idInsert: resp.id }); // does it send all the newtrainee object the the client?
-    });
-});
+// app.post('/trainees', function(req, res) {
+//     var newTrainee = new Trainee({
+//         fullName: "Ana Levi",
+//         gender: "Female",
+//         age: 52,
+//         phoneNumber: "0501230067",
+//         adress: "Alons 32 , Yavne",
+//         dateMedicalAssuranceEnd: new Date(2017, 06, 06, 14, 12),
+//         dateMembershipStart: new Date(2017, 11, 03, 14, 12),
+//         dateMembershipEnd: new Date(2018, 11, 03, 14, 12),
+//         isActive: true
+//     });
+//     newTrainee.save(function(requ, resp) {
+//         res.send({ status: "Ok", idInsert: resp.id }); // does it send all the newtrainee object the the client?
+//     });
+// });
 // 3) handling a delete req
 
 app.delete('/trainees/:id', function(req, res) {
