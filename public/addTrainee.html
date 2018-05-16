@@ -94,10 +94,9 @@
         <div class="page">
             <form class="trainee-form">
                 <table class="table">
-                        
                     <thead>
-                            <th>Adding Trainee From:</th>
-                            <br>
+                        <th>Adding Trainee From:</th>
+                        <br>
                         <tr>
                             <td>
                                 <span>Full name </span>
@@ -136,17 +135,15 @@
                         <tr>
 
                             <td>
-                                    <span>End Of Medical Assurance </span>
-                                    <input spaceholder="please enter fullname" type="date" class="dateMedicalAssuranceEnd">
+                                <span>End Of Medical Assurance </span>
+                                <input spaceholder="please enter fullname" type="date" class="dateMedicalAssuranceEnd">
                             </td>
-                            
                         </tr>
                         <tr>
                             <td>
-                                    <span>Start Of Medical Assurance </span>
-                                    <input spaceholder="please enter fullname" type="date" class="dateMembershipStart">
+                                <span>Start Of Medical Assurance </span>
+                                <input spaceholder="please enter fullname" type="date" class="dateMembershipStart">
                             </td>
-                           
                         </tr>
                         <tr>
                             <td>
@@ -160,25 +157,18 @@
                                 <input spaceholder="please enter fullname" type="date" class="dateMembershipEnd">
                             </td>
                         </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" name="submit" value="save">
+                            </td>
+                        </tr>
                     </thead>
                 </table>
             </form>
 
-            <script type="text/javascript">
-                $(function () {
-                    $('.arrow').click(function () {
-                        $(".pages").toggleClass("close-top-bar", 800);
-                        $(".top-bar span").toggle("fast");
-                        $(".arrow").toggleClass("arrow-right", 800);
-                        $(".arrow i").toggleClass("rotate", 800);
-                    });
 
-                    $('.upUser').click(function () {
-                        $(".userBox").toggleClass("showBox");
-                    });
-                });
-            </script>
             <script src="jquery/dist/jquery.js"></script>
+            <script src="js/master.js"></script>
 </body>
 
 </html>
