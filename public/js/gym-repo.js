@@ -60,9 +60,10 @@ class GymRepo {
             var d1 = new Date();
             var d2 = new Date(data[i].dateMembershipEnd);
             var d3 = new Date(data[i].dateMembershipStart);
-            if (d1.getMonth() == d2.getMonth() && d1.getTime() > d2.getTime()) left += 1;
-            if (d1.getMonth() == d2.getMonth() && d1.getYear() == d2.getYear()) aboutToLeave += 1;
-            if (d1.getMonth() == d3.getMonth() && d1.getYear() == d3.getYear()) newMembers += 1;
+        
+            if (d1.getMonth() == d2.getMonth() && d1.getYear() == d2.getYear() && d1.getDate() > d2.getDate()) left += 1;
+            if (d1.getMonth() == d2.getMonth() && d1.getYear() == d2.getYear() && d1.getDate() < d2.getDate()) aboutToLeave += 1;
+            if (d1.getMonth() == d3.getMonth() && d1.getYear() == d3.getYear() && d1.getDate() > d3.getDate()) newMembers += 1;
         }
         target = (left + aboutToLeave) - (newMembers) + 1;
         return [
