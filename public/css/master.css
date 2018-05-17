@@ -89,7 +89,7 @@ h2.headline{
   width: 283px;
   height: 60px;
   border-bottom: 1px solid #219BD2;
-  transition: 0.3s;
+  transition:0.3s;
 }
 .ico {
   font-size: 20px;
@@ -253,4 +253,10 @@ h2.headline{
   font-size: 19px;
   padding-bottom: 3px;
   vertical-align: middle;
+}
+
+.choose,.menu li:hover {
+  background: #fff;
+  color: #000;
+  border-bottom: 2px solid #219BD2;
 }

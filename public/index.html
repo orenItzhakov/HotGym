@@ -20,7 +20,7 @@
         </div>
         <form id="usernamePassword" action="homepage.html" method="get" name="f">
             <div class="inputContainer">
-                <input type="text" class="loginBoxInput" name="username" id="username" placeholder="User Name" autocomplete="off" autofocus="" value="">
+                <input type="text" class="loginBoxInput" name="username" id="username" placeholder="User Name" autocomplete="off" autofocus="" value="" onchange="localStorage.setItem('userNameVal', document.getElementById('username').value);">
             </div>
             <div class="inputContainer">
                 <input type="password" class="loginBoxInput" name="password" id="password" placeholder="Password" autocomplete="off" value="">
