@@ -9,6 +9,7 @@ class EventHandler {
 
     }
 
+
     async handleAddTrainee() {
         $('.saveTrainee').on('click', () => {
             const values = {};
@@ -36,6 +37,7 @@ class EventHandler {
         let insideRepo = this.gymRepo;
         let insideTraineesRender = this.traineesRenderer;
         $('.pages').on('click', '.delete', function() {
+            console.log(this.gymRepo)
             let traineeId = $(this).closest('.trainee').data().id;
             console.log(traineeId)
             insideRepo.removeTrainee(traineeId).then((updatedTraineesList) => {

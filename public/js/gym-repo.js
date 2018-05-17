@@ -20,7 +20,8 @@ class GymRepo {
     async addTrainee(traineeData) {
         let result = await $.ajax({
             method: "POST",
-            url: '/addtrainees',
+
+            url: '/trainees',
             data: traineeData
         })
     }
@@ -34,6 +35,8 @@ class GymRepo {
             .then((data) => {
                 console.log(data)
                 return this.trainees = data;
+
+                //    this.trainees.splice(index, 1);
             })
     };
 

@@ -23,6 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // 1) to handle getting all trainees
 app.get('/trainees', function(req, res) {
+    console.log('GET trainee SERVER call')
     Trainee.find({}, function(error, result) {
         if (error) {
             return console.error(error);
@@ -37,7 +38,7 @@ app.get('/home', function(req, res) {
     res.sendfile(__dirname + '/public/homepage.html');
 });
 //---------------------------------------------------------------------
-app.post('/addtrainees', (req, res) => {
+app.post('/trainees', (req, res) => {
     // debugger
     console.log('im working')
     var newTrainee = new Trainee(req.body);
@@ -66,8 +67,8 @@ app.delete('/trainees/:id', function(req, res) {
                 console.error(err)
                 res.send("somthing went wrong")
             } else {
-                console.log("what are you???")
-                    // console.log(alltrainess)
+                // console.log("what are you???")
+                // console.log(alltrainess)
                 res.send(alltrainess)
             }
         })
