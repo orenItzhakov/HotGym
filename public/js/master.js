@@ -1,7 +1,11 @@
 $(".addNav").load("nav.html");
 
+ 
+
+
 var loadToggleImage = function(){
-$(function() {
+    $(function() {
+        
     $('.arrow').click(function() {
         $(".pages").toggleClass("close-top-bar", 800);
         $(".top-bar span").toggle("fast");
@@ -17,6 +21,19 @@ $(function() {
 
 }
 
-loadToggleImage()
+loadToggleImage();
+    
+
+
+
+
+
+
+
+
+
+
+
+
 
 

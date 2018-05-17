@@ -1,8 +1,9 @@
 class EventHandler {
 
-    constructor(gymRepo, traineesRenderer) {
-        this.traineesRenderer = traineesRenderer
-        this.gymRepo = gymRepo;
+    constructor(gymRepo, traineesRenderer, MasterJs) {
+        this.traineesRenderer = traineesRenderer,
+        this.gymRepo = gymRepo,
+        this.MasterJs = MasterJs;
     }
 
     
@@ -65,6 +66,16 @@ class EventHandler {
         let traineesId = $traineeForm.data().id
         this.gymRepo.editTrainee(traineesId, traineeForm);
 
+    }
+
+    StoringUserNameFromLogin(){
+        let MasterJs = this.MasterJs;
+        $('.loginButton').click(function(){
+            let userName = $('.loginBoxInput').val();
+            MasterJs.saveUserNameToLocalStorage(userName);
+            console.log(userName)
+
+        })
     }
 }
 
