@@ -1,42 +1,42 @@
 class EventHandler {
 
-    constructor(gymRepo, traineesRenderer) {
+ 
+    constructor(traineesRenderer, gymRepo) {
         this.traineesRenderer = traineesRenderer
         this.gymRepo = gymRepo;
+        // console.log(this.gymRypo)
+        console.log('from even hendler constracror')
+
     }
 
-    
 
-    handleAddTrainee() {
-        $('.addTrainee').on('click', () => {
-            // let $traineeForm = $(this).closest('.trainee-from') // need to know the way you orginized the html.
-
-            // cetch trainee data 
-
-            //----
-            let fullName = $('.fullName').val();
-            let gender = $('.gender').val();
-            let age = $('.age').val();
-            let phoneNumber = $('.phoneNumber').val();
-            let adress = $('.adress').val();
-            let dateMedicalAssuranceEnd = $('.dateMedicalAssuranceEnd').val();
-            let dateMembershipStart = $('.dateMembershipStart').val();
-            let dateMembershipEnd = $('.dateMembershipEnd').val();
-            //-----
-            let traineeForm = {
-                fullName: fullName,
-                gender: gender,
-                age: age,
-                phoneNumber: phoneNumber,
-                adress: adress,
-                dateMedicalAssuranceEnd: dateMedicalAssuranceEnd,
-                dateMembershipStart: dateMembershipStart,
-            }
-            this.gymRepo.addTrainee(traineeForm).then(() => {
-                alert("new trainee as been saved");
-            })
+    async handleAddTrainee() {
+        $('.saveTrainee').on('click', () => {
+            const values = {};
+            $(':input').each(function() {
+                if ($(this).hasClass('addTrainee'))
+                    return;
+                //collects all the input data -- i know its not pretty --david-- 
+                values[$(this).attr('class')] = $(this).val();
+            });
+            this.gymRepo.addTrainee(values)
         })
     }
+
+    registerAddPost() {
+        $('#addpost').on('click', () => {
+            let $input = $("#postText");
+            if ($input.val() === "") {
+                alert("Please enter text!");
+            } else {
+                this.postsRepository.addPost($input.val());
+                this.postsRenderer.renderPosts(this.p());
+                $input.val("");
+            }
+        });
+    }
+
+
 
     handleRenderTrainees() {
         $('.trainees').on('click', () => {

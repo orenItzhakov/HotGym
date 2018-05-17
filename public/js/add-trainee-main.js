@@ -5,16 +5,11 @@ import EventHandler from './events-handler.js';
 let gymRepo = new GymRepo();
 let traineesRenderer = new TraineesRenderer();
 let eventHandler = new EventHandler(traineesRenderer, gymRepo);
+// let eventHandler = new EventHandler();
 
 
-async function loadPage() {
-    let data = await gymRepo.getTrainees();
-    traineesRenderer.renderTrainees(data)
-}
-loadPage();
-eventHandler.handleRenderTrainees();
-eventHandler.handleRemoveTrainee();
-
-// eventHandler.handleAddTrainee();
+// eventHandler.handleRenderTrainees();
+eventHandler.handleAddTrainee();
 // eventHandler.handleRemoveTrainee();
 // eventHandler.HandleEditTrainee();
+gymRepo.addTrainee()
