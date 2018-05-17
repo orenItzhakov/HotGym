@@ -10,10 +10,8 @@
         async renderTrainees(trainees) {
             this.$trainees.empty();
             let template = Handlebars.compile(this.$traineesTemplate);
-            for (let i = 0; i < trainees.length; i++) {
-                let newHTML = template(trainees[i]);
-                this.$trainees.append(newHTML);
-            }
+            let newHTML = template({trainees:trainees});
+            this.$trainees.append(newHTML);
         }
     }
     export default TraineesRenderer;

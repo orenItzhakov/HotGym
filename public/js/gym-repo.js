@@ -54,6 +54,26 @@ class GymRepo {
         })
     };
 
+    getDataForChart(data) {
+        var target = 0, left = 0, aboutToLeave = 0, newMembers = 0;
+        for (let i = 0; i < data.length; i++) {
+            var d1 = new Date();
+            var d2 = new Date(data[i].dateMembershipEnd);
+            var d3 = new Date(data[i].dateMembershipStart);
+            if (d1.getMonth() == d2.getMonth() && d1.getTime() > d2.getTime()) left += 1;
+            if (d1.getMonth() == d2.getMonth() && d1.getYear() == d2.getYear()) aboutToLeave += 1;
+            if (d1.getMonth() == d3.getMonth() && d1.getYear() == d3.getYear()) newMembers += 1;
+        }
+        target = (left + aboutToLeave) - (newMembers) + 1;
+        return [
+            ['Category', 'How many trainees']
+            , ['Target number - More members to sign up', target]
+            , ['Left', left]
+            , ['About to leave', aboutToLeave]
+            , ['New members', newMembers]
+        ];
+    }
+
 }
 //class ends
 
