@@ -27,16 +27,13 @@ class GymRepo {
 
 
     removeTrainee(traineetId) {
-        // let traineetId = this.trainees[index]._id;
         return $.ajax({
                 method: "DELETE",
                 url: '/trainees/' + traineetId
             })
             .then((data) => {
-                this.trainees = data;
                 console.log(data)
-                this.trainees.splice(index, 1);
-                return this.trainees;
+                return this.trainees = data;
             })
     };
 

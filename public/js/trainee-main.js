@@ -13,5 +13,5 @@ async function loadPage() {
 loadPage();
 eventHandler.handleRenderTrainees();
 // eventHandler.handleAddTrainee();
-// eventHandler.handleRemoveTrainee();
+eventHandler.handleRemoveTrainee();
 // eventHandler.HandleEditTrainee();
