@@ -1,19 +1,30 @@
-/**
- * @class Responsible for rendering home page and user details in the HTML
- */
-class ChartRenderer {
-    constructor() {
-        this.$chart = $(".chart");
-        this.$chartTemplate = $('#chart-template').html();
+    /**
+     * @class Responsible for rendering users page and user details in the HTML
+     */
+    class HomePageRender{
+        constructor() {
+            this.$donutchart = document.getElementById('donutchart');
+        }
+
+        drawChart(dataChart) {
+            console.log(dataChart);
+            
+            var data = google.visualization.arrayToDataTable(dataChart);
+    
+            var options = {
+              title: 'Current Month - Members Traffic',
+              pieHole: 0.4,
+            };
+    
+            var chart = new google.visualization.PieChart(this.$donutchart);
+            chart.draw(data, options);
+          }
     }
 
-    renderChart(chart) {
-        this.$chart.empty();
-        let template = Handlebars.compile(this.$chartTemplate);
-        let newHTML = template(chart);
-        this.$chart.append(newHTML);
-    }
-}
+    export default HomePageRender;
 
-
-export default ChartRenderer;
+    // <script id="chart-template" type="text/javascript">
+    //                 google.charts.load("current", {packages:["corechart"]});
+    //                 google.charts.setOnLoadCallback(drawChart);
+    //                 function 
+    //               </script>
