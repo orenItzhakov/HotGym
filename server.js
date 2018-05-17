@@ -61,11 +61,13 @@ app.post('/addtrainees', (req, res) => {
 
 app.delete('/trainees/:id', function(req, res) {
     Trainee.findByIdAndRemove({ _id: req.params.id }, function(err, deletedPost) {
-        Trainee.find().exec(function(err, alltrainess) {
+        Trainee.find({}).exec(function(err, alltrainess) {
             if (err) {
                 console.log(err)
                 res.send("somthing went wrong")
             } else {
+                console.log("what are you???")
+                console.log(alltrainess)
                 res.send(alltrainess)
             }
         })

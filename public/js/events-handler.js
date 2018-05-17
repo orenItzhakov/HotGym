@@ -1,12 +1,14 @@
 class EventHandler {
 
-    constructor(traineesRenderer, gymRepoCopy) {
+ 
+    constructor(traineesRenderer, gymRepo) {
         this.traineesRenderer = traineesRenderer
-        this.gymRypo = gymRepoCopy;
+        this.gymRepo = gymRepo;
         // console.log(this.gymRypo)
         console.log('from even hendler constracror')
 
     }
+
 
     async handleAddTrainee() {
         $('.saveTrainee').on('click', () => {
@@ -17,7 +19,7 @@ class EventHandler {
                 //collects all the input data -- i know its not pretty --david-- 
                 values[$(this).attr('class')] = $(this).val();
             });
-            this.gymRypo.addTrainee(values)
+            this.gymRepo.addTrainee(values)
         })
     }
 
@@ -46,10 +48,16 @@ class EventHandler {
     }
 
     handleRemoveTrainee() {
-        let traineesId = $('.remove-trainee').siblings('.trainee').attr("data-id");
-        this.gymRepo.removeTrainee(traineesId).then(() => {
-            this.gymRepo.trainessRenderer.renderTrainees(this.gymRypo.trainees);
+     let insideRepo = this.gymRepo;
+     let insideTraineesRender =this.traineesRenderer;
+        $('.pages').on('click','.delete', function(){
+            console.log(this.gymRepo)
+        let traineeId = $(this).closest('.trainee').data().id;
+        console.log(traineeId)
+        insideRepo.removeTrainee(traineeId).then((updatedTraineesList) => {
+            insideTraineesRender.renderTrainees(updatedTraineesList);
         })
+    })
     }
 
     HandleEditTrainee() {
