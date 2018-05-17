@@ -1,54 +1,40 @@
 class EventHandler {
 
-    constructor(traineesRenderer, gymRepo) {
+    constructor(traineesRenderer, gymRepoCopy) {
         this.traineesRenderer = traineesRenderer
-        this.gymRypo = gymRepo;
+        this.gymRypo = gymRepoCopy;
+        // console.log(this.gymRypo)
+        console.log('from even hendler constracror')
+
     }
 
-    handleAddTrainee() {
+    async handleAddTrainee() {
         $('.saveTrainee').on('click', () => {
-            debugger;
-            // let $traineeForm = $(this).closest('.trainee-from') // need to know the way you orginized the html.
-            // const recoverValues = () => {
             const values = {};
-
             $(':input').each(function() {
                 if ($(this).hasClass('addTrainee'))
                     return;
-                // very ugly code
+                //collects all the input data -- i know its not pretty --david-- 
                 values[$(this).attr('class')] = $(this).val();
             });
-            // debugger;
-            console.log(values)
-            return values;
-
-            // }
-            // cetch trainee data 
-
-            // //----
-            // let fullName = $('.fullName').val();
-            // let gender = $('.gender').val();
-            // let age = $('.age').val();
-            // let phoneNumber = $('.phoneNumber').val();
-            // let adress = $('.adress').val();
-            // let dateMedicalAssuranceEnd = $('.dateMedicalAssuranceEnd').val();
-            // let dateMembershipStart = $('.dateMembershipStart').val();
-            // let dateMembershipEnd = $('.dateMembershipEnd').val();
-            // //-----
-            // let traineeForm = {
-            //     fullName: fullName,
-            //     gender: gender,
-            //     age: age,
-            //     phoneNumber: phoneNumber,
-            //     adress: adress,
-            //     dateMedicalAssuranceEnd: dateMedicalAssuranceEnd,
-            //     dateMembershipStart: dateMembershipStart,
-            // }
-            this.gymRepo.addTrainee(traineeForm).then(() => {
-                alert("new trainee as been saved");
-            })
+            this.gymRypo.addTrainee(values)
         })
     }
+
+    registerAddPost() {
+        $('#addpost').on('click', () => {
+            let $input = $("#postText");
+            if ($input.val() === "") {
+                alert("Please enter text!");
+            } else {
+                this.postsRepository.addPost($input.val());
+                this.postsRenderer.renderPosts(this.p());
+                $input.val("");
+            }
+        });
+    }
+
+
 
     handleRenderTrainees() {
         $('.trainees').on('click', () => {

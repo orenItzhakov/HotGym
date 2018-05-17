@@ -6,31 +6,23 @@ class GymRepo {
         this.trainees = [];
     }
 
-    getTrainees() {
-        return $.get('/trainees')
-            .then((data) => {
-                this.trainees = data;
-                return this.trainees;
-            })
-    };
-    // catch trainee data
-    // addTrainee(traineeForm) {
 
-    //     //send trainee data
-    //     return $.post('/trainees', { form: traineeForm })
-    //         .then((savedTrainee) => {
-    //             console.log(savedTrainee)
-    //             this.trainees.push(savedTrainee);
-    //             // return savedTrainee;
-    //         })
-    // }
+
+    async getTrainees() {
+        let result = await $.ajax({
+            method: "GET",
+            url: '/trainees',
+        })
+        this.trainees = result;
+        return this.trainees
+    }
+
     async addTrainee(traineeData) {
         let result = await $.ajax({
             method: "POST",
-            url: '/posts',
+            url: '/addtrainees',
             data: traineeData
         })
-        this.trainees.push(savedTrainee);
     }
 
 
