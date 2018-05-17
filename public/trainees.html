@@ -19,12 +19,12 @@
     <div class="addNav"></div>
     <div class="pages">
         <div class="page">
-          <h2 class="headline">Trainees</h2>
+            <h2 class="headline">Trainees</h2>
             <div class="search_form">
                 <div class="search">
                     <input type="text" id="myInput" placeholder="Search trainee">
                     <div class="styled-select rounded">
-                      <select name="selector" title="Search by gender">
+                        <select name="selector" title="Search by gender">
                         <option value="">Gender</option>
                         <option value="">Male</option>
                         <option value="">Female</option>
@@ -53,7 +53,7 @@
             <!-- info -->
             <!-- add user -->
             <form action="trainees" method="POST" style="display:none;">
-                <input type="submit" value="addUserBtn">
+                <input type="submit">
             </form>
         </div>
     </div>
@@ -67,8 +67,8 @@
             <td>{{dateMembershipStart}}</td>
             <td>{{dateMembershipEnd}}</td>
             <td class="actions">
-                <a href="#">Delete</a>
-                <a href="#">Edit</a>
+                <a href="#" class="delete">Delete</a>
+                <a href="#" class="edit">Edit</a>
             </td>
         </tr>
 

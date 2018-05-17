@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 const SERVER_PORT = 8080;
 
 mongoose.connect('mongodb://localhost/HotGymDB', function() {
-    console.log("DB connection established!!!");
+    console.log("DB connection established!!! SERVER_PORT = 8080");
 })
 
 var Gym = require('./models/gymModel');
@@ -23,12 +23,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // 1) to handle getting all trainees
 app.get('/trainees', function(req, res) {
-    Trainee.find({ isActive: true }, function(error, result) {
+    console.log('GET trainee SERVER call')
+    Trainee.find({}, function(error, result) {
         if (error) {
             return console.error(error);
             res.send(error);
         }
-        console.log(result)
+        // console.log(result)
         res.send(result);
     });
 });
@@ -38,45 +39,36 @@ app.get('/home', function(req, res) {
 });
 //---------------------------------------------------------------------
 app.post('/trainees', (req, res) => {
+    // debugger
+    console.log('im working')
     var newTrainee = new Trainee(req.body);
-    newTrainee.save((err, post) => {
-        if (err) {
-            console.log(err);
-        } else {
+    console.log(newTrainee.fullName)
+    if (newTrainee.fullName == undefined) {
+        console.error(err);
+    } else {
+        newTrainee.save((err, post) => {
+
             console.log('POST ADDED')
             res.send(post);
-        }
-    })
+
+        })
+    }
+
 });
 
 //---------------------------------------------------------------------
 
-// 2) to handle adding a trainee
-app.post('/trainees', function(req, res) {
-    var newTrainee = new Trainee({
-        fullName: "Ana Levi",
-        gender: "Female",
-        age: 52,
-        phoneNumber: "0501230067",
-        adress: "Alons 32 , Yavne",
-        dateMedicalAssuranceEnd: new Date(2017, 06, 06, 14, 12),
-        dateMembershipStart: new Date(2017, 11, 03, 14, 12),
-        dateMembershipEnd: new Date(2018, 11, 03, 14, 12),
-        isActive: true
-    });
-    newTrainee.save(function(requ, resp) {
-        res.send({ status: "Ok", idInsert: resp.id }); // does it send all the newtrainee object the the client?
-    });
-});
 // 3) handling a delete req
 
 app.delete('/trainees/:id', function(req, res) {
     Trainee.findByIdAndRemove({ _id: req.params.id }, function(err, deletedPost) {
-        Trainee.find().exec(function(err, alltrainess) {
+        Trainee.find({}).exec(function(err, alltrainess) {
             if (err) {
-                console.log(err)
+                console.error(err)
                 res.send("somthing went wrong")
             } else {
+                // console.log("what are you???")
+                // console.log(alltrainess)
                 res.send(alltrainess)
             }
         })

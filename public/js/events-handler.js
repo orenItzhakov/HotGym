@@ -2,53 +2,27 @@ class EventHandler {
 
     constructor(traineesRenderer, gymRepo) {
         this.traineesRenderer = traineesRenderer
-        this.gymRypo = gymRepo;
+        this.gymRepo = gymRepo;
+        // console.log(this.gymRypo)
+        // console.log(this.traineesRenderer)
+        console.log('from even hendler constracror')
+
     }
 
-    handleAddTrainee() {
-        $('.saveTrainee').on('click', () => {
-            debugger;
-            // let $traineeForm = $(this).closest('.trainee-from') // need to know the way you orginized the html.
-            // const recoverValues = () => {
-            const values = {};
 
+    async handleAddTrainee() {
+        $('.saveTrainee').on('click', () => {
+            const values = {};
             $(':input').each(function() {
                 if ($(this).hasClass('addTrainee'))
                     return;
-                // very ugly code
+                //collects all the input data -- i know its not pretty --david-- 
                 values[$(this).attr('class')] = $(this).val();
             });
-            // debugger;
-            console.log(values)
-            return values;
-
-            // }
-            // cetch trainee data 
-
-            // //----
-            // let fullName = $('.fullName').val();
-            // let gender = $('.gender').val();
-            // let age = $('.age').val();
-            // let phoneNumber = $('.phoneNumber').val();
-            // let adress = $('.adress').val();
-            // let dateMedicalAssuranceEnd = $('.dateMedicalAssuranceEnd').val();
-            // let dateMembershipStart = $('.dateMembershipStart').val();
-            // let dateMembershipEnd = $('.dateMembershipEnd').val();
-            // //-----
-            // let traineeForm = {
-            //     fullName: fullName,
-            //     gender: gender,
-            //     age: age,
-            //     phoneNumber: phoneNumber,
-            //     adress: adress,
-            //     dateMedicalAssuranceEnd: dateMedicalAssuranceEnd,
-            //     dateMembershipStart: dateMembershipStart,
-            // }
-            this.gymRepo.addTrainee(traineeForm).then(() => {
-                alert("new trainee as been saved");
-            })
+            this.gymRepo.addTrainee(values)
         })
     }
+
 
     handleRenderTrainees() {
         $('.trainees').on('click', () => {
@@ -60,9 +34,15 @@ class EventHandler {
     }
 
     handleRemoveTrainee() {
-        let traineesId = $('.remove-trainee').siblings('.trainee').attr("data-id");
-        this.gymRepo.removeTrainee(traineesId).then(() => {
-            this.gymRepo.trainessRenderer.renderTrainees(this.gymRypo.trainees);
+        let insideRepo = this.gymRepo;
+        let insideTraineesRender = this.traineesRenderer;
+        $('.pages').on('click', '.delete', function() {
+            console.log(this.gymRepo)
+            let traineeId = $(this).closest('.trainee').data().id;
+            console.log(traineeId)
+            insideRepo.removeTrainee(traineeId).then((updatedTraineesList) => {
+                insideTraineesRender.renderTrainees(updatedTraineesList);
+            })
         })
     }
 

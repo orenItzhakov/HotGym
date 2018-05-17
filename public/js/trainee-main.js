@@ -4,15 +4,18 @@ import EventHandler from './events-handler.js';
 
 let gymRepo = new GymRepo();
 let traineesRenderer = new TraineesRenderer();
-let eventHandler = new EventHandler(gymRepo, traineesRenderer);
+let eventHandler = new EventHandler(traineesRenderer, gymRepo);
 
 
-var getTrainees = gymRepo.getTrainees();
-getTrainees.then(function(data) {
+async function loadPage() {
+    let data = await gymRepo.getTrainees();
     traineesRenderer.renderTrainees(data)
-});
+}
 
-// eventHandler.handleRenderTrainees();
+loadPage();
+eventHandler.handleRenderTrainees();
+eventHandler.handleRemoveTrainee();
+
 // eventHandler.handleAddTrainee();
 // eventHandler.handleRemoveTrainee();
 // eventHandler.HandleEditTrainee();
