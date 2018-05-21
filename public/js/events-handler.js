@@ -47,10 +47,15 @@ class EventHandler {
     }
 
     HandleEditTrainee() {
-        let $traineeForm = $(this).closest('.trainee-form') // need to know the way you orginized the html.
-        let traineesId = $traineeForm.data().id
-        this.gymRepo.editTrainee(traineesId, traineeForm);
+        let insideRepo = this.gymRepo;
+        let insideTraineesRender = this.traineesRenderer;
+        $('.pages').on('click', '.edit', function(){
+            console.log(this.gymRepo)
+            let traineeId = $(this).closest('.trainee').data().id;
+            console.log(traineeId)
+            insideRepo.editTrainee(traineeId).then()
 
+        }
     }
 }
 
