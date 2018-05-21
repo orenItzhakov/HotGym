@@ -41,8 +41,18 @@ class GymRepo {
     };
 
 
-    editTrainee(traineeId, traineeForm) {
-        // let traineetId = this.trainees[index]._id;
+    editTrainee(traineeId) {
+            return $.ajax({
+                url: '/trainees/' + traineeId,
+                method: "POST",
+                data: newTraineeDetails,
+                dataType: 'json'
+            }).then((data) => {
+                console.log(data)
+                this.posts[postIndex].comments.push(newCom);
+            })
+    
+        
         return $.ajax({
             url: '/trainees/' + traineeId,
             method: "POST",
@@ -52,7 +62,7 @@ class GymRepo {
             this.trainees = data;
             return this.trainees;
         })
-    };
+    }
 
     getDataForChart(data) {
         var target = 0, left = 0, aboutToLeave = 0, newMembers = 0;

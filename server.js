@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 
 const SERVER_PORT = 8080;
 
-mongoose.connect('mongodb://localhost/HotGymDB', function() {
+mongoose.connect((process.env.CONNECTION_STRING||'mongodb://localhost/beers'), function() {
     console.log("DB connection established!!! SERVER_PORT = 8080");
 })
 
@@ -17,7 +17,7 @@ var Trainee = require('./models/traineeModel');
 
 
 
-app.listen(SERVER_PORT, function() {
+app.listen((process.env.PORT || '8080'), function() {
     console.log("Server run... HotGym");
 })
 app.use(express.static('public'));
