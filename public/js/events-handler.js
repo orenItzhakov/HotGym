@@ -13,7 +13,7 @@ class EventHandler {
     async handleAddTrainee() {
         $('.saveTrainee').on('click', () => {
             const values = {};
-            $(':input').each(function() {
+            $(':input').each(function () {
                 if ($(this).hasClass('addTrainee'))
                     return;
                 //collects all the input data -- i know its not pretty --david-- 
@@ -36,7 +36,7 @@ class EventHandler {
     handleRemoveTrainee() {
         let insideRepo = this.gymRepo;
         let insideTraineesRender = this.traineesRenderer;
-        $('.pages').on('click', '.delete', function() {
+        $('.pages').on('click', '.delete', function () {
             console.log(this.gymRepo)
             let traineeId = $(this).closest('.trainee').data().id;
             console.log(traineeId)
@@ -49,15 +49,15 @@ class EventHandler {
     HandleEditTrainee() {
         let insideRepo = this.gymRepo;
         let insideTraineesRender = this.traineesRenderer;
-        $('.pages').on('click', '.edit', function(){
+        $('.pages').on('click', '.edit', function () {
             console.log(this.gymRepo)
             let traineeId = $(this).closest('.trainee').data().id;
             console.log(traineeId)
             insideRepo.editTrainee(traineeId).then()
-
-        }
+        })
     }
 }
+
 
 
 export default EventHandler;
